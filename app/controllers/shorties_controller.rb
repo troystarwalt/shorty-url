@@ -11,7 +11,11 @@ class ShortiesController < ApplicationController
     # This will grab the unique_key of the shorty and
     # redirect the user to the original url
     @shorty = Shorty.find_by_shortened(params[:unique_key])
-    # Hacky way of forcing http:// for now.
-    redirect_to @shorty.original
+    if @shorty.nil?
+      # Need to add a flash
+      redirect_to root_path
+    else
+      redirect_to @shorty.original
+    end
   end
 end

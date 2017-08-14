@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ShortyUrl
+    = csrf_meta_tags
+    <script src="https://use.fontawesome.com/9789c97f78.js"></script>
+    = stylesheet_pack_tag 'application'
+    %meta{:content => "width=device-width, initial-scale=1, minimum-scale=1", :name => "viewport"}/
+  %body
+    = yield
+  = javascript_pack_tag 'application'
