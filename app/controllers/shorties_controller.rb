@@ -9,5 +9,8 @@ class ShortiesController < ApplicationController
   def show
     # This will grab the unique_key of the shorty and
     # redirect the user to the original url
+    @shorty = Shorty.find_by_shortened(params[:unique_key])
+    # Hacky way of forcing http:// for now.
+    redirect_to 'http://' + @shorty.original
   end
 end

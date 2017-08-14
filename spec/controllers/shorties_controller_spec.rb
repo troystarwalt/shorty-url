@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ShortiesController, type: :controller do
+  let(:valid_shorty) { FactoryGirl.create(:shorty) }
 
   describe '#create' do
     it 'creates a new shorty url' do
@@ -11,9 +12,9 @@ RSpec.describe ShortiesController, type: :controller do
   end
 
   describe 'GET #show' do
-    it 'returns http success' do
-      get :show
-      expect(response).to have_http_status(:success)
+    it 'redirects' do
+      get :show, params: { unique_key: valid_shorty.shortened }
+      expect(response).to have_http_status(302)
     end
   end
 
