@@ -1,0 +1,2 @@
+class Shorty < ApplicationRecord
+end
