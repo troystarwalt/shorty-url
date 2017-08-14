@@ -1,6 +1,9 @@
 class ShortiesController < ApplicationController
   def create
     # Create the shorty from the original
+    sanitized_original = params[:url]
+    @shorty = Shorty.new(original: sanitized_original, shortened: Shorty.create_unique_key)
+    @shorty.save
   end
 
   def show
