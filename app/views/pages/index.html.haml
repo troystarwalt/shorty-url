@@ -1,2 +1,6 @@
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+= form_with(model: @shorty, url: {action: 'create', controller: 'shorties'}) do |f|
+  = f.label :url
+  = f.text_field :original
+  = f.submit
+#latest_url
+  %p The Latest

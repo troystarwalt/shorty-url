@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
-
   root 'pages#index'
+
+  get '/shorties/all', to: 'shorties#index'
 
   post 'create', to: 'shorties#create'
 

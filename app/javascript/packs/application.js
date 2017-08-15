@@ -9,4 +9,6 @@
 
 import 'normalize.css/normalize.css';
 import '../application.scss';
-console.log('Hello World from Webpacker')
+// var jQuery = require('jquery')
+const Rails = require('rails-ujs');
+Rails.start();
