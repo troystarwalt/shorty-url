@@ -5,9 +5,10 @@
     width: 50%;
     font-size: 1.2em;
     border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid #1e3c72;
+    border-left: 1px solid rgba(30, 60, 114, .1);
+    border-right: 1px solid rgba(30, 60, 114, .1);
+    border-bottom: 2px solid rgba(30, 60, 114, 1);
+    margin-bottom: 25px;
     &:focus {
       outline-offset: 0;
       outline: none;
@@ -30,4 +31,10 @@
       color: $grey-black;
     }
   }
+}
+
+.alert {
+  background-color: rgb(171, 32, 32);
+  padding: 5px;
+  color: $white;
 }
