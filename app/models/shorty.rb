@@ -1,15 +1,14 @@
 class Shorty < ApplicationRecord
   validates :original, :shortened, presence: true
 
-  before_validation :smart_add_url_protocol
-
+  before_validation :smart_add_url_protocol, :create_unique_key
   validate :valid_uri
 
-  def self.create_unique_key
-    shortened_url = SecureRandom.base58(5)
-  end
-
   protected
+
+  def create_unique_key
+    self.shortened = SecureRandom.base58(5)
+  end
 
   def smart_add_url_protocol
     return if self.original.blank?

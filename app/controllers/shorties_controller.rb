@@ -1,23 +1,21 @@
 class ShortiesController < ApplicationController
 
+
   def index
     @shorty = Shorty.new
   end
 
   def create
-    # Create the shorty from the original
-    @shorty = Shorty.new(original: params[:shorty][:original], shortened: Shorty.create_unique_key)
+    @shorty = Shorty.new(shorty_params)
     respond_to do |format|
       if @shorty.save
         format.js   { }
-        format.html { redirect_to root_path, notce: "Shorty created." }
+        format.html { redirect_to root_path, notice: "Shorty created!" }
       else
-        format.html { redirect_to root_path, notice: "Not going to happen." }
+        format.html { redirect_to root_path, notice: "Sorry, that's not going to happen." }
         format.js   { }
-        # format.json { render json: @shorty.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   def show
@@ -26,6 +24,7 @@ class ShortiesController < ApplicationController
     @shorty = Shorty.find_by_shortened(params[:unique_key])
     if @shorty.nil?
       # Need to add a flash
+      flash[:alert] = "Not going to happen."
       redirect_to root_path
     else
       Thread.new do
@@ -36,5 +35,11 @@ class ShortiesController < ApplicationController
       # Permanent redirect
       redirect_to @shorty.original, status: 301
     end
+  end
+
+  private
+
+  def shorty_params
+    params.require(:shorty).permit(:original)
   end
 end
