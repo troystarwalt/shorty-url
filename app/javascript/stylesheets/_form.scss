@@ -20,11 +20,12 @@
     width: 245px;
     height: 78px;
     border: none;
-    font-size: 2.3em;
+    font-size: 2em;
     font-weight:$black-font-weight;
     background-color: rgba(45, 147, 83, 1);
     transition: all .3s linear;
     color: $white-grey;
+    text-transform: uppercase;
     cursor: pointer;
     &:hover {
       background-color: rgba(45, 147, 83, .3);

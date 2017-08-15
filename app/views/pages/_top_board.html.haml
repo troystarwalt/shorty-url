@@ -1,7 +1,19 @@
-- @shorties.each do |s|
-  %ul
-    %li
-      %a{href: s.original}= s.original
-    %li
-      %a{href: root_url + s.shortened}=root_url + s.shortened
-    %li= s.use_count
+-# - @shorties.each do |s|
+-#   %ul
+-#     %li
+-#       %a{href: s.original}= s.original
+-#     %li
+-#       %a{href: root_url + s.shortened}=root_url + s.shortened
+-#     %li= s.use_count
+%table.top-board
+  %thead
+    %tr.header-row
+      %th Subimtted
+      %th shortened
+      %th Uses
+  %tbody
+    - @shorties.each do |s|
+      %tr
+        %td= s.original
+        %td= root_url + s.shortened
+        %td= s.use_count
