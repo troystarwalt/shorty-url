@@ -9,8 +9,8 @@
 
 import 'normalize.css/normalize.css';
 import '../application.scss';
-import flashDismiss from '../helpers/flashDismiss';
+// import flashDismiss from '../helpers/flashDismiss';
 const Rails = require('rails-ujs');
 Rails.start();
 
-flashDismiss();
+// flashDismiss();

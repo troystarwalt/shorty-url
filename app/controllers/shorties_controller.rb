@@ -13,7 +13,7 @@ class ShortiesController < ApplicationController
         format.html { redirect_to root_path, notce: "Shorty created." }
       else
         format.html { redirect_to root_path, notice: "Not going to happen." }
-        format.js {}
+        format.js   { }
         # format.json { render json: @shorty.errors, status: :unprocessable_entity }
       end
     end
@@ -27,7 +27,6 @@ class ShortiesController < ApplicationController
     if @shorty.nil?
       # Need to add a flash
       redirect_to root_path
-      puts "not happening"
     else
       Thread.new do
         # Increment the use count by one for each visit.
