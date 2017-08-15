@@ -12,6 +12,6 @@ puts "Clearing Old Data"
 Shorty.destroy_all
 
 puts "---  Creating Shorties   ---"
-100.times do
+200.times do
   Shorty.create!(original: Faker::Internet.url, shortened: Faker::Internet.password(5, 5), use_count: rand(0..10))
 end

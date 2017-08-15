@@ -16,8 +16,7 @@ class ShortiesController < ApplicationController
         format.json { render json: @shorty.errors, status: :unprocessable_entity }
       end
     end
-    # @shorty = Shorty.new(original: submitted_url, shortened: Shorty.create_unique_key)
-    # @shorty.save
+
   end
 
   def show
@@ -27,7 +26,14 @@ class ShortiesController < ApplicationController
     if @shorty.nil?
       # Need to add a flash
       redirect_to root_path
+      puts "not happening"
     else
+      Thread.new do
+        # Increment the use count by one for each visit.
+        @shorty.increment!(:use_count)
+        ActiveRecord::Base.connection.close
+      end
+      # Permanent redirect
       redirect_to @shorty.original, status: 301
     end
   end

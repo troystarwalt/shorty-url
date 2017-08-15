@@ -4,3 +4,10 @@
   = f.submit
 #latest_url
   %p The Latest
+
+.row
+  - @shorties.each do |s|
+    %ul
+      %li= s.original
+      %li= root_url + s.shortened
+      %li= s.use_count
