@@ -1,24 +1,10 @@
-# README
+# URL Shortener called Shorty
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Shorty is a rails app that takes any URL and shortens it to a unique five character URL.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To get started:
+1. git clone [git@github.com:troystarwalt/shorty-url.git](git@github.com:troystarwalt/shorty-url.git)
+2. `cd shorty-url`
+3. `./bin/setup`
+4. `./bin/webpack-dev-server`
+5. `rails s`
