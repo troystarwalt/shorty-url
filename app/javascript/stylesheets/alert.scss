@@ -1,0 +1,28 @@
+.alert {
+  padding: 10px;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    align-self: center;
+  }
+
+  .dismiss {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 30px;
+  }
+}
+
+.alert-alert {
+  background-color: $error-color;
+}
+
+.alert-notice {
+  background-color: #3691ca;
+}
+
+.alert-success {
+  background-color: #5a9e21;
+}

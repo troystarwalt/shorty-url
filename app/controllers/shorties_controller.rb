@@ -10,10 +10,12 @@ class ShortiesController < ApplicationController
     respond_to do |format|
       if @shorty.save
         format.js   { }
-        format.html { redirect_to root_path, notice: "Shorty created!" }
+        #  fall back for Safari
+        format.html { redirect_to root_path, success: "Shorty created! ---- #{root_url + @shorty.shortened}" }
       else
-        format.html { redirect_to root_path, notice: "Sorry, that's not going to happen." }
         format.js   { }
+        #  fall back for Safari
+        format.html { redirect_to root_path, alert: "Sorry, there was an error with your submission. Please try again." }
       end
     end
   end
@@ -24,7 +26,7 @@ class ShortiesController < ApplicationController
     @shorty = Shorty.find_by_shortened(params[:unique_key])
     if @shorty.nil?
       # Need to add a flash
-      flash[:alert] = "Not going to happen."
+      flash[:alert] = "Sorry, but #{root_url + params[:unique_key]} wasn't found."
       redirect_to root_path
     else
       Thread.new do
@@ -33,6 +35,7 @@ class ShortiesController < ApplicationController
         ActiveRecord::Base.connection.close
       end
       # Permanent redirect
+      flash[:success] = "Success! Redirecting now."
       redirect_to @shorty.original, status: 301
     end
   end
