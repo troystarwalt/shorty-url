@@ -13,3 +13,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+
+h2.title {
+  display: inline-block;
+  border-bottom: 2px solid $blue;
+  padding-right: 20px;
+}

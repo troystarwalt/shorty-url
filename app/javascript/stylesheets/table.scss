@@ -2,6 +2,7 @@ table {
   margin: 0 auto;
   width: 100%;
   border-collapse: collapse;
+  margin-top: 40px;
 }
 
 /* Zebra striping */
@@ -11,7 +12,7 @@ tr:nth-of-type(odd) {
 th {
   background: $grey-black;
   color: $white;
-  font-weight: bold;
+font-weight: bold;
 }
 td, th {
   padding: 6px;
@@ -19,6 +20,12 @@ td, th {
   text-align: left;
 }
 
+
+@media (min-width: 1240px) {
+  table {
+    width: 80%;
+  }
+}
 
 /*
 Max width before this PARTICULAR table gets nasty
