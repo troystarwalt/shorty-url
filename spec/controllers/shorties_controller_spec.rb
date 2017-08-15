@@ -6,7 +6,7 @@ RSpec.describe ShortiesController, type: :controller do
   describe '#create' do
     it 'creates a new shorty url' do
       expect{
-        post :create, params: { url: 'www.google.com/whatever' }
+        post :create, params: { shorty: {original: 'www.google.com/whatever' } }
       }.to change(Shorty,:count).by(1)
     end
   end
