@@ -1,7 +1,7 @@
 %nav.fixed
-  %ul
-    %li
-      = link_to 'Shorty', root_path
-    %li
-      %a{html: '#top-board'}
+  %ul.nav-list
+    %li.nav-item
+      = link_to 'Shorty', root_path, class: 'nav-logo'
+    %li.nav-item
+      %a.nav-link{href: '#top-board'}
         Top Board

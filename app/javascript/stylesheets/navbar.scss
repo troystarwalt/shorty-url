@@ -2,5 +2,30 @@ nav {
   background: #1e3c72; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #1e3c72, #2a5298); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #1e3c72, #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 58px;
+  height: 65px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  font-size: 1em;
+  .nav-item {
+    a,
+    a:link,
+    a:visited {
+      color: $white;
+      text-decoration: none;
+      padding: 15px 20px;
+    }
+    .nav-link:hover {
+      background: $white;
+      color: $grey-black;
+    }
+    .nav-logo {
+      font-size: 1.8em;
+      font-family: $heading-font;
+    }
+  }
 }
