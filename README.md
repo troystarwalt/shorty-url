@@ -12,3 +12,8 @@ Shorty is a rails app that takes any URL and shortens it to a unique five charac
 
 ## Ruby version
 I've built this on `2.4.1` using rails `5.1.2`
+
+## Production Seeds
+I've setup some real fake data for playing around with the tool. It's setup as a rake task:
+
+`rake shorties:seed_urls`
