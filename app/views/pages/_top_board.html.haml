@@ -1,0 +1,7 @@
+- @shorties.each do |s|
+  %ul
+    %li
+      %a{href: s.original}= s.original
+    %li
+      %a{href: root_url + s.shortened}=root_url + s.shortened
+    %li= s.use_count

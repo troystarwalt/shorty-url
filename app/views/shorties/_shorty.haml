@@ -1,1 +1,5 @@
-%p= root_url + @shorty.shortened
+- if @shorty && @shorty.errors.any?
+  = render 'layouts/errors'
+- else
+  %h2 Here's your shorty!
+  %p= root_url + @shorty.shortened

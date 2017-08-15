@@ -13,7 +13,8 @@ class ShortiesController < ApplicationController
         format.html { redirect_to root_path, notce: "Shorty created." }
       else
         format.html { redirect_to root_path, notice: "Not going to happen." }
-        format.json { render json: @shorty.errors, status: :unprocessable_entity }
+        format.js {}
+        # format.json { render json: @shorty.errors, status: :unprocessable_entity }
       end
     end
 

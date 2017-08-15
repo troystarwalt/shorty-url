@@ -1,0 +1,4 @@
+= form_with(model: @shorty, url: {action: 'create', controller: 'shorties'}) do |f|
+  = f.label :url
+  = f.text_field :original
+  = f.submit 'Shorten'

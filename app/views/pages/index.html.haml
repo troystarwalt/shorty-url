@@ -1,13 +1,3 @@
-= form_with(model: @shorty, url: {action: 'create', controller: 'shorties'}) do |f|
-  = f.label :url
-  = f.text_field :original
-  = f.submit
+= render 'partials/form'
 #latest_url
-  %p The Latest
-
-.row
-  - @shorties.each do |s|
-    %ul
-      %li= s.original
-      %li= root_url + s.shortened
-      %li= s.use_count
+= render 'top_board'

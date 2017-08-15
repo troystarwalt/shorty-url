@@ -1,0 +1,7 @@
+.alert.alert-notice
+  %span
+    = pluralize(@shorty.errors.count, 'error')
+    prohibited this url from being shortened
+  - @shorty.errors.full_messages.each do |msg|
+    .alert.alert-alert
+      %span= msg
