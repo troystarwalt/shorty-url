@@ -12,5 +12,5 @@
       - @shorties.each do |s|
         %tr
           %td= s.original
-          %td= root_url + s.shortened
+          %td= root_url + s.unique_key
           %td= s.use_count

@@ -13,7 +13,7 @@ RSpec.describe ShortiesController, type: :controller do
 
   describe 'GET #show' do
     it 'redirects with 301 when there is a valid key' do
-      get :show, params: { unique_key: valid_shorty.shortened }
+      get :show, params: { unique_key: valid_shorty.unique_key }
       expect(response).to have_http_status(301)
     end
 

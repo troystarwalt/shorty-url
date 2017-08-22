@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Using for shortening URLs
+gem 'hashids'
+
 # Use HAML for template files
 gem "haml-rails", "~> 1.0"
 

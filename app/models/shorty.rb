@@ -1,14 +1,22 @@
 class Shorty < ApplicationRecord
-  validates :original, :shortened, presence: true
+  validates :original, presence: true
 
-  before_validation :smart_add_url_protocol, :create_unique_key
+  before_validation :smart_add_url_protocol
+  # after_create :create_unique_key
+  # after_save
   validate :valid_uri
+
+  def unique_key
+    hashid = Hashids.new('I love short urls')
+    @unique_key = hashid.encode(self.id)
+  end
 
   protected
 
-  def create_unique_key
-    self.shortened = SecureRandom.base58(5)
-  end
+  # def create_unique_key
+  #   hashid = Hashids.new(self.original)
+  #   self.shortened = hashid.encode(self.id)
+  # end
 
   def smart_add_url_protocol
     return if self.original.blank?
